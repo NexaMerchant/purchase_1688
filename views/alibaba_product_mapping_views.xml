@@ -1,0 +1,43 @@
+<odoo>
+    <!-- Tree View -->
+    <record id="view_alibaba_product_mapping_tree" model="ir.ui.view">
+        <field name="name">alibaba.product.mapping.tree</field>
+        <field name="model">alibaba.product.mapping</field>
+        <field name="arch" type="xml">
+            <tree string="1688 Product Mappings">
+                <field name="product_id"/>
+                <field name="alibaba_product_id"/>
+                <field name="alibaba_sku_id"/>
+            </tree>
+        </field>
+    </record>
+
+    <!-- Form View -->
+    <record id="view_alibaba_product_mapping_form" model="ir.ui.view">
+        <field name="name">alibaba.product.mapping.form</field>
+        <field name="model">alibaba.product.mapping</field>
+        <field name="arch" type="xml">
+            <form string="1688 Product Mapping">
+                <group>
+                    <field name="product_id"/>
+                    <field name="alibaba_product_id"/>
+                    <field name="alibaba_sku_id"/>
+                </group>
+            </form>
+        </field>
+    </record>
+
+    <!-- Action -->
+    <record id="action_alibaba_product_mapping" model="ir.actions.act_window">
+        <field name="name">1688 Product Mapping</field>
+        <field name="res_model">alibaba.product.mapping</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+
+    <!-- Menu Items -->
+    <menuitem id="menu_alibaba_root" name="1688 对接" sequence="99"/>
+    <menuitem id="menu_alibaba_mapping" name="商品映射"
+              parent="menu_alibaba_root"
+              action="action_alibaba_product_mapping"
+              sequence="1"/>
+</odoo>

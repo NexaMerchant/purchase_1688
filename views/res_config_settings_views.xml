@@ -1,0 +1,22 @@
+<odoo>
+    <record id="view_alibaba_config_form" model="ir.ui.view">
+        <field name="name">res.config.settings.view.form.inherit.alibaba</field>
+        <field name="model">res.config.settings</field>
+        <field name="inherit_id" ref="base.view_res_config_settings"/>
+        <field name="arch" type="xml">
+            <xpath expr="//div[@id='settings']" position="inside">
+                <div class="app_settings_block" data-string="1688 Settings">
+                    <field name="alibaba_app_key"/>
+                    <field name="alibaba_app_secret"/>
+                    <button name="action_get_alibaba_authorization_url"
+                            type="object"
+                            string="授权1688账号"
+                            class="btn btn-primary"
+                            icon="fa-key"/>
+                    <field name="alibaba_access_token" readonly="1"/>
+                    <field name="alibaba_refresh_token" readonly="1"/>
+                </div>
+            </xpath>
+        </field>
+    </record>
+</odoo>

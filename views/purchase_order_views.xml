@@ -1,0 +1,24 @@
+<odoo>
+    <!-- Inherit Purchase Order Form -->
+    <record id="view_purchase_order_form_inherit_1688" model="ir.ui.view">
+        <field name="name">purchase.order.form.1688.inherit</field>
+        <field name="model">purchase.order</field>
+        <field name="inherit_id" ref="purchase.purchase_order_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//sheet/notebook" position="inside">
+                <page string="1688 信息">
+                    <group>
+                        <field name="alibaba_order_id" readonly="1"/>
+                    </group>
+                    <footer>
+                        <button name="button_sync_to_alibaba"
+                                type="object"
+                                string="上传至1688"
+                                class="btn-primary"
+                                icon="fa-cloud-upload"/>
+                    </footer>
+                </page>
+            </xpath>
+        </field>
+    </record>
+</odoo>
